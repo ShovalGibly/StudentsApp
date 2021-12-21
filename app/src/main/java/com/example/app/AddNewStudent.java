@@ -41,7 +41,9 @@ public class AddNewStudent extends Fragment {
             student.setPhone(phoneEt.getText().toString());
             student.setFlag(cb.isChecked());
             Model.instance.addStudent(student);
-            Navigation.findNavController(v).navigateUp();
+//            Navigation.findNavController(v).navigateUp();
+            Navigation.findNavController(v).navigate(AddNewStudentDirections.actionAddNewStudentToNavHome());
+
         });
 
         cancelBtn.setOnClickListener((v)->{
