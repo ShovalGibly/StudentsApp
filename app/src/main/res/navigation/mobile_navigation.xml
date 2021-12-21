@@ -12,32 +12,28 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.app.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.app.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
-    <fragment
         android:id="@+id/addNewStudent"
         android:name="com.example.app.AddNewStudent"
         android:label="fragment_add_new_student"
-        tools:layout="@layout/fragment_add_new_student" />
+        tools:layout="@layout/fragment_add_new_student" >
+        <action
+            android:id="@+id/action_addNewStudent_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
     <fragment
         android:id="@+id/listStudentFragment"
         android:name="com.example.app.ListStudentFragment"
         android:label="fragment_list_student"
-        tools:layout="@layout/fragment_list_student" >
+        tools:layout="@layout/fragment_students_list" >
         <action
             android:id="@+id/action_studentListFragment_to_studentDetailsFragment"
             app:destination="@id/studentDetailsFragment" />
         <argument
             android:name="studentid"
             app:argType="string" />
+        <action
+            android:id="@+id/action_listStudentFragment_to_addNewStudent"
+            app:destination="@id/addNewStudent" />
     </fragment>
     <fragment
         android:id="@+id/editStudentFragment"
